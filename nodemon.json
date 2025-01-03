@@ -1,0 +1,5 @@
+{
+  "watch": ["src", ".env", "eslint.config.js"],
+  "ext": "js,json,env,eslint",
+  "exec": "npm run lint && node src/main.js"
+}
