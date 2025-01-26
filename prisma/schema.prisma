@@ -22,3 +22,18 @@ datasource db {
 
     @@map("users")
  }
+
+ model Blog {
+    id          String @id @default(uuid())
+    title       String
+    content     String
+
+    tags        Tag[] @relation("BlogTags")
+ }
+
+ model Tag {
+    id          String @id @default(uuid())
+    name        String
+    blogId      String
+    blogs       Blog @relation(fields: [blogId], references: [id], name: "BlogTags")  
+ }
